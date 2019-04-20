@@ -17,7 +17,7 @@ package com.liziyi0914.jal;
 
 import com.google.gson.Gson;
 import com.liziyi0914.scl.jars.JARSFile;
-import com.liziyi0914.scl.SecurityClassLoader;
+import com.liziyi0914.scl.SecureClassLoader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -44,7 +44,7 @@ public class Launcher {
             Updater.runInstall(res.getJsonLink());
         }
         JARSFile jarsf = JARSFile.load(packet);
-        SecurityClassLoader loader = new SecurityClassLoader(jarsf);
+        SecureClassLoader loader = new SecureClassLoader(jarsf);
         Launcher launcher = new Launcher();
         Class c = loader.loadClass(jarsf.getLaunchClass());
         App app = (App) c.getAnnotation(App.class);
