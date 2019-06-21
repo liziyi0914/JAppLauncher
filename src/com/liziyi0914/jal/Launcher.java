@@ -41,7 +41,7 @@ public class Launcher {
         if (!packet.exists()) {
             File resF = new File("resource.json");
             Resource res = new Gson().fromJson(new FileReader(resF), Resource.class);
-            Updater.runInstall(res.getJsonLink());
+            Updater.runInstall(Github.getFile(res.getGit(), res.getAppName()+".jars"));
         }
         JARSFile jarsf = JARSFile.load(packet);
         SecureClassLoader loader = new SecureClassLoader(jarsf);

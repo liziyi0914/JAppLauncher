@@ -35,7 +35,7 @@ public @interface App {
     int VersionID() default 0;
 
     String Author() default "Developer";
-
-    String Link() default "";
+    
+    String Git() default "";
 
 }

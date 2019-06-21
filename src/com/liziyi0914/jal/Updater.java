@@ -36,7 +36,7 @@ public class Updater {
     public void checkUpdate() {
         System.out.println("com.lzy2002.launcher.Updater.checkUpdate()");
         try {
-            Resource res = dlResource(app.Link());
+            Resource res = dlResource(Github.getFile(app.Git(), app.Name()+".json"));
             if (res.getVersionID() > app.VersionID()) {
                 System.err.println("update!!!");
                 update(res);
@@ -84,7 +84,7 @@ public class Updater {
 
     public static File dlMain(Resource res) {
         try {
-            byte[] jarsFile = Downloader.downLoadFromURL(res.getLink());
+            byte[] jarsFile = Downloader.downLoadFromURL(Github.getFile(res.getGit(), res.getAppName()+".jars"));
             File dlFile = new File(".\\download.temp");
             if (dlFile.exists()) {
                 dlFile.delete();

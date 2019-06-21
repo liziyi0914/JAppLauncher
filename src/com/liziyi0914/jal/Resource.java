@@ -27,8 +27,6 @@ public class Resource {
     private String Version = "0.0.1";
     private String Author = "Dev";
     private String Git = "";
-    private String Link = "";
-    private String JsonLink = "";
     private String[] Require = new String[1];
 
     /**
@@ -113,34 +111,6 @@ public class Resource {
      */
     public void setGit(String Git) {
         this.Git = Git;
-    }
-
-    /**
-     * @return the Link
-     */
-    public String getLink() {
-        return Link;
-    }
-
-    /**
-     * @param Link the Link to set
-     */
-    public void setLink(String Link) {
-        this.Link = Link;
-    }
-
-    /**
-     * @return the JsonLink
-     */
-    public String getJsonLink() {
-        return JsonLink;
-    }
-
-    /**
-     * @param JsonLink the JsonLink to set
-     */
-    public void setJsonLink(String JsonLink) {
-        this.JsonLink = JsonLink;
     }
 
     /**
